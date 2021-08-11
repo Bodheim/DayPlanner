@@ -1,80 +1,68 @@
+//Display todays date at the top of the page!!
+var currentTimeVar = moment().format('MM-DD-YYYY');
+$('#currentDay').text("Today's Date: " + currentTimeVar);
 
+var savedtext = [];
 
-var eventEl = $("#event-name");
+//define variables
+var text6 = $('.text6').val();
+var text7 = $('.text7').val();
+var text8 = $('.text8').val();
+var text9 = $('.text9').val();
+var text10 = $('.text10').val();
+var text11 = $('.text11').val();
+var text12 = $('.text12').val();
+var text1 = $('.text1').val();
+var text2 = $('.text2').val();
+var text3 = $('.text3').val();
+var text4 = $('.text4').val();
+var text5 = $('.text5').val();
 
-//basics first.
-//Lets start with the date showing at the top of the page and worry
-//about the scedule builder after
-var today = moment();
-$("#currentDay").text(today.format("MMM Do, YYYY"));
-//complete
+localStorage.setItem('save6', text6);
+console.log(localStorage);
 
-var time = ["5", "6", "7"];
-//these 2 are test variables until I make the events a fill in option
-//currently in use to make the table
+var save6 = $('.save6');
+var save7 = $('.save7');
+var save8 = $('.save8');
+var save9 = $('.save9');
+var save10 = $('.save10');
+var save11 = $('.save11');
+var save12 = $('.save12');
+var save1 = $('.save1');
+var save2 = $('.save2');
+var save3 = $('.save3');
+var save4 = $('.save4');
+var save5 = $('.save5');
 
-function display() {
-  var container = document.getElementById("container");
-  var table = document.createElement("table");
-  var tbody = document.createElement("tbody");
-  var thead = document.createElement("thead");
+var saveStatus6 = false;
+var saveStatus7 = false;
+var saveStatus8 = false;
+var saveStatus9 = false;
+var saveStatus10 = false;
+var saveStatus11 = false;
+var saveStatus12 = false;
+var saveStatus1 = false;
+var saveStatus2 = false;
+var saveStatus3 = false;
+var saveStatus4 = false;
+var saveStatus5 = false;
 
-  var header = ["Time", "Event Name"];
-  for (var i = 0; i < header.length; i++) {
-    thead
-      .appendChild(document.createElement("th"))
-      .appendChild(document.createTextNode(header[i]));
-  }
+// save9.addEventListener('click', function () {
+//   localStorage.setItem('', savedText);
+//   userInputsArray[0].saveStatus = true;
+// });
 
-  var times = [
-    ["5am", " "],
-    ["6am", " "],
-    ["7am", " "],
-  ];
+// function savefunction9() {
+//   localStorage.setItem('', savedText);
+//   userInputsArray[0].saveStatus = true;
+// }
 
-  for (var i = 0; i < times.length; i++) {
-    var vals = times[i];
-    var row = document.createElement("tr");
-    for (var j = 0; j < times[i].length; j++) {
-      var col = document.createElement("td");
-      col.textContent = vals[j];
-      row.appendChild(col);
-    }
-    tbody.appendChild(row);
-  }
-
-  table.appendChild(thead); //add table's headers to a header element in a table
-  table.appendChild(tbody); //add table's body to body element in a table
-  container.appendChild(table); //put the whole table inside "container"
-}
-display(); //calls function called "display"
-
-//so we have a basic table now but I want to be able to have the
-//times be constant on the left.
-//I need a constant variable for time
-//and then I can remove the addcontrols for the time entry
-//I think I'll have to do this by making a new function before the table
-//and then calling the table function at the end of it.
-//I'd make an empty array and fill it by counting and
-//by whatever the user fills in.
-//so times would count from i starting at 5 for a 5 am schedule
-
-//that said, I need some kinda if statement
-//for if x = times to place the event variable
-//with that time space.
-
-//make plug in time / date option to type time and date
-//basic function for inputing info
-$("#new").click(function () {
-  var addcontrols = "<tr>";
-  addcontrols +=
-    "<td><input type='text' name='time' placeholder='Enter Time ..'></td>";
-  addcontrols +=
-    "<td><input type='text' name='eventName' placeholder='Enter Event Name ..'></td>";
-  addcontrols += "</tr>";
-  //then append the entered info
-  $("table tbody").append(addcontrols);
-});
-
-//make something selectable
-//$("#events").selectable();
+// $('button9').on('click', saveFunction9);
+// $('button10').on('click', saveFunction10);
+// $('button11').on('click', saveFunction11);
+// $('button12').on('click', saveFunction12);
+// $('button1').on('click', saveFunction1);
+// $('button2').on('click', saveFunction2);
+// $('button3').on('click', saveFunction3);
+// $('button4').on('click', saveFunction4);
+// $('button5').on('click', saveFunction5);
